@@ -17,10 +17,12 @@ public class AppRepository {
     public List<Person> getPersonsByCity(String city) {
         return personRepository.findByCityName(city);
     }
-    public List<Person> getPersonByAgeLessThan(int age){
-        return personRepository.findByPersonShortDataAgeLessThan(age, Sort.by("personShortDataAge"));
+
+    public List<Person> getPersonByAgeLessThan(int age) {
+        return personRepository.findByPersonShortDataAgeLessThan(age, Sort.by("personShortData.age"));
     }
-    public Optional<Person> getPersonByNameAndSurname(String name, String surname){
+
+    public Optional<Person> getPersonByNameAndSurname(String name, String surname) {
         return personRepository.findByPersonShortDataNameAndPersonShortDataSurname(name, surname);
     }
 

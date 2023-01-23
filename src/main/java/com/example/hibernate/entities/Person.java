@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Person {
 
     @EmbeddedId
-    private PersonShortData personShortData;
+    private PersonShortData personShortData ;
     @Column(nullable = false)
     private String phoneNumber;
     @ManyToOne

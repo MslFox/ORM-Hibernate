@@ -33,7 +33,7 @@ public class HybernateCommandLineRunner implements CommandLineRunner {
                 peek(cityRepository::save).
                 toList();
         IntStream.range(0, 5).
-                mapToObj(i ->  Person.builder().
+                mapToObj(i -> Person.builder().
                         personShortData(PersonShortData.builder().
                                 name(names.get(i % 2 == 0 ? 0 : 1)).
                                 surname(surnames.get(i)).
@@ -43,7 +43,5 @@ public class HybernateCommandLineRunner implements CommandLineRunner {
                         city(cities.get(i % 2 == 0 ? 0 : 1)).
                         build()).
                 forEach(personRepository::save);
-
-
     }
 }

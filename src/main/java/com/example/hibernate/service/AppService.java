@@ -32,17 +32,18 @@ public class AppService {
                                 map(x -> x.getPersonShortData().nameSurnameToUpperCaseString()).
                                 collect(Collectors.joining("\n")));
     }
+
     public String getPersonByNameSurname(String name, String surname) {
-        try{
-        var person = appRepository.getPersonByNameAndSurname(name, surname).
-                orElseThrow(() -> new EntityNotFoundException("PERSON NOT FOUND"));
-                return String.format("%s %s Возраст: %s Тел: %s Город: %s",
-                        person.getPersonShortData().getName(),
-                        person.getPersonShortData().getSurname(),
-                        person.getPersonShortData().getAge(),
-                        person.getPhoneNumber(),
-                        person.getCity().getName());
-    }catch (EntityNotFoundException e){
+        try {
+            var person = appRepository.getPersonByNameAndSurname(name, surname).
+                    orElseThrow(() -> new EntityNotFoundException("PERSON NOT FOUND"));
+            return String.format("%s %s Возраст: %s Тел: %s Город: %s",
+                    person.getPersonShortData().getName(),
+                    person.getPersonShortData().getSurname(),
+                    person.getPersonShortData().getAge(),
+                    person.getPhoneNumber(),
+                    person.getCity().getName());
+        } catch (EntityNotFoundException e) {
             return e.getMessage();
         }
     }
