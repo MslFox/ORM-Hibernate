@@ -1,5 +1,7 @@
-## Для поиска по `age` использовать `http://localhost:8080/persons/by-age?age=40`
-## Для поиска по `name` и `surname` использовать `http://localhost:8080/persons/by-name-surname?name=Igor&surname=Serov`
+#### Для поиска по `age` использовать 
+`http://localhost:8080/persons/by-age?age=40`
+#### Для поиска по `name` и `surname` использовать 
+`http://localhost:8080/persons/by-name-surname?name=Igor&surname=Serov`
 # Задача DAO слой c JPA Repositories
 
 ## Описание

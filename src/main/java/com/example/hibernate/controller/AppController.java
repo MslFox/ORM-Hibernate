@@ -15,21 +15,25 @@ public class AppController {
     private final AppService appService;
 
     @GetMapping("/persons/by-city")
-    public ResponseEntity<String> getResponse(@RequestParam String city ) {
+    public ResponseEntity<String> getResponse(@RequestParam String city) {
         return ResponseEntity.ok().
                 contentType(MediaType.TEXT_PLAIN).
                 body(appService.getNameSurnameByCityAgeOrder(city));
     }
+
     @GetMapping("/persons/by-age")
-    public ResponseEntity<String> getResponse(@RequestParam Integer age ) {
+    public ResponseEntity<String> getResponse(@RequestParam Integer age) {
         return ResponseEntity.ok().
                 contentType(MediaType.TEXT_PLAIN).
                 body(appService.getNameSurnameByAgeLessThan(age));
     }
+
     @GetMapping("persons/by-name-surname")
     public ResponseEntity<String> getResponse(@RequestParam String name, String surname) {
         return ResponseEntity.ok().
+                contentType(MediaType.valueOf("text/plain;charset=UTF-8")).
                 body(appService.getPersonByNameSurname(name, surname));
+
     }
 
 
